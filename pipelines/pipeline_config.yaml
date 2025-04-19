@@ -1,0 +1,44 @@
+# Pipeline Configuration
+
+# Azure Data Factory Settings
+adf:
+  subscription_id: ${AZURE_SUBSCRIPTION_ID}
+  resource_group: ${AZURE_RESOURCE_GROUP}
+  factory_name: ${ADF_FACTORY_NAME}
+  pipeline_name: "data_processing_pipeline"
+
+# Databricks Settings
+databricks:
+  workspace_url: ${DATABRICKS_WORKSPACE_URL}
+  cluster_id: ${DATABRICKS_CLUSTER_ID}
+  token: ${DATABRICKS_TOKEN}
+  notebook_path: "/Users/rudreshupadhyaya/Desktop/projs/DataMove/notebooks/databricks_pipeline_dev"
+
+# Retry Configuration
+retry:
+  max_attempts: 3
+  initial_delay: 1
+  max_delay: 60
+  exponential_base: 2
+
+# Alerting Configuration
+alerts:
+  email:
+    enabled: true
+    recipients:
+      - "team@example.com"
+    on_failure: true
+    on_success: false
+  
+  slack:
+    enabled: true
+    webhook_url: ${SLACK_WEBHOOK_URL}
+    channel: "#data-pipeline-alerts"
+    on_failure: true
+    on_success: false
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "json"
+  output_file: "logs/pipeline.log" 
