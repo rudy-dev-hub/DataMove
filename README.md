@@ -61,4 +61,8 @@ python -m pytest tests/
 
 ## License
 
-MIT License 
+MIT License
+
+---
+
+Made with ❤️ by Rudresh Upadhyaya 
